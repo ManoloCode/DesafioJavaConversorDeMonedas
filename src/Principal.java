@@ -8,7 +8,7 @@ public class Principal {
         ConsultaMoneda consulta = new ConsultaMoneda();
         System.out.println("\n************************************");
         System.out.println("\n Bienvenido a nuestro conversor de monedas.. Por favor seleccione la moneda Base: ");
-        System.out.println("\n Ejemplo: USD, EUR, COP.");
+        System.out.println("\n Ejemplo: USD, EUR, COP, Etc...\n");
         String menu = ("""
                 1. Dolar -> USD
                 2. Euro -> EUR
@@ -25,17 +25,18 @@ public class Principal {
         try {
 
             var monedaBase = (lectura.nextLine());
-            System.out.println("\n Seleccione la moneda a la cual desea realizar la conversion:");
+            System.out.println("\n Seleccione la moneda a la cual desea realizar la conversion:\n");
 
             System.out.println(menu);
             Scanner segundaLectura = new Scanner(System.in);
             var monedaConversion = (segundaLectura.nextLine());
 
-            System.out.println("\nIngrese el monto que deseas convertir.");
+            System.out.println("\nIngrese el monto que deseas convertir.\n");
             Scanner monto = new Scanner(System.in);
             var montoAConvertir = (monto.nextLine());
 
             Moneda moneda = consulta.conversionMoneda(monedaBase, monedaConversion, Double.valueOf(montoAConvertir));
+            System.out.println("**************************************\n");
             System.out.println("El total de " + monedaBase + " en " + monedaConversion + " es equivalente a " + moneda.conversion_result());
             System.out.println("\nFinalizando el conversor...");
             GeneradorDeArchivos generador = new GeneradorDeArchivos();
