@@ -5,37 +5,44 @@ public class Principal {
 
     public static void main(String[] args) {
         Scanner lectura = new Scanner(System.in);
-        MonedaAConsultar consulta = new MonedaAConsultar();
+        ConsultaMoneda consulta = new ConsultaMoneda();
         System.out.println("\n************************************");
-        System.out.println("\nSeleccione la opción de la conversión que desea realizar: ");
-        System.out.println("""
-                1. USD >> COP Dolar a Peso Colombiano.
-                2. COP >> USD Peso Colombiano a Dolar.
-                3. EUR >> COP Euro a Peso Colombiano.
-                4. COP >> EUR Peso Colombiano a Euro.
-                5. CLP >> COP Peso Chileno a Peso Colombiano.
-                6. COP >> CLP Peso Colombiano a Peso Chileno.
-                7. BRL >> COP Real Brasileño a Peso Colombiano.
-                8. COP >> BRL Peso Colombiano a Real Brasileño.
-                9. ARS >> COP Peso Argentino a Peso Colombiano.
-                10. COP >> ARS Peso Colombiano a Peso Argentino.
+        System.out.println("\n Bienvenido a nuestro conversor de monedas.. Por favor seleccione la moneda Base: ");
+        System.out.println("\n Ejemplo: USD, EUR, COP.");
+        String menu = ("""
+                1. Dolar -> USD
+                2. Euro -> EUR
+                3. Peso Colombiano -> COP
+                4. Peso Chileno -> CLP
+                5. Real Brasileño -> BRL
+                6. Peso Argentino -> ARS
+                7. Dólar canadiense -> CAD
+                8. Nuevo Sol (Perú) -> PEN
+                9. Salir.
                """);
+        System.out.println(menu);
 
         try {
-            var StringDeConversion = (lectura.nextLine());
-            Moneda moneda = consulta.buscaMoneda(StringDeConversion);
-            System.out.println(moneda);
+
+            var monedaBase = (lectura.nextLine());
+            System.out.println("\n Seleccione la moneda a la cual desea realizar la conversion:");
+
+            System.out.println(menu);
+            Scanner segundaLectura = new Scanner(System.in);
+            var monedaConversion = (segundaLectura.nextLine());
+
+            System.out.println("\nIngrese el monto que deseas convertir.");
+            Scanner monto = new Scanner(System.in);
+            var montoAConvertir = (monto.nextLine());
+
+            Moneda moneda = consulta.conversionMoneda(monedaBase, monedaConversion, Double.valueOf(montoAConvertir));
+            System.out.println("El total de " + monedaBase + " en " + monedaConversion + " es equivalente a " + moneda.conversion_result());
+            System.out.println("\nFinalizando el conversor...");
             GeneradorDeArchivos generador = new GeneradorDeArchivos();
             generador.guardarJson(moneda);
-        }catch (NumberFormatException e) {
-            System.out.println("Número no encontrado. "+ e.getMessage());
-        }catch (RuntimeException | IOException e) {
+        }catch (RuntimeException | IOException e){
             System.out.println(e.getMessage());
-            System.out.println("Finalizado la aplicación...");
         }
-
-
     }
-
-
 }
+
