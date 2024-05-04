@@ -1,8 +1,8 @@
 ## <h1 align="center"> Conversor De Monedas / MonedaXchange </h1>
 
-![GitHub Org's stars](https://img.shields.io/github/stars/camilafernanda?style=social)
-
 ![Imagen inicial conversor](https://github.com/ManoloCode/DesafioJavaConversorDeMonedas/assets/64999009/74c7c0ab-0173-4a6c-b7d0-c07811f24af0)
+
+![GitHub Org's stars](https://img.shields.io/github/stars/camilafernanda?style=social)
 
 <p align="center"><img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green"></p>
 
