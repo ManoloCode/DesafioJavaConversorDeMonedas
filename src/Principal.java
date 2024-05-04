@@ -18,7 +18,6 @@ public class Principal {
                 6. Peso Argentino -> ARS
                 7. Dólar canadiense -> CAD
                 8. Nuevo Sol (Perú) -> PEN
-                9. Salir.
                """);
         System.out.println(menu);
 
