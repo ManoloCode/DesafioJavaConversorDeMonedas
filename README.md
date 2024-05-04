@@ -46,7 +46,7 @@ Además, MonedaXchange se esfuerza por mantenerse al día con las últimas tende
 - `1. Selección de Monedas`: Los usuarios pueden seleccionar las monedas de origen y destino de una lista de opciones.
 - `2. Entrada de Monto`: Los usuarios pueden ingresar el monto que desean convertir.
 - `3. Tasas de Cambio en Tiempo Real`: La aplicación utiliza tasas de cambio actualizadas en tiempo real para realizar las conversiones.
-- `4. Resultados Instantáneos`: Después de ingresar el monto y seleccionar las monedas, los usuarios pueden ver el resultado de la conversión de manera instantánea.
+- `4. Resultados Instantáneos`: Después de seleccionar las monedas e ingresar el monto, los usuarios pueden ver el resultado de la conversión de manera instantánea.
 - `5. Soporte para Múltiples Monedas`: La aplicación admite una amplia variedad de monedas populares y permite a los usuarios convertir entre ellas.
 - `6. Interfaz Intuitiva`: La interfaz de usuario es fácil de usar y proporciona una experiencia fluida para los usuarios, con instrucciones claras sobre cómo realizar la conversión.
   
